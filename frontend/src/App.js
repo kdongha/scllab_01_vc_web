@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import TargetContainer from './components/TargetContainer';
-import FileContainer from './components/FileContainer';
-import StatusContainer from './components/StatusContainer';
-import ButtonContainer from './components/ButtonContainer';
+import TargetContainer from './Container/TargetContainer';
+import FileContainer from './Container/FileContainer';
+import StatusContainer from './Container/StatusContainer';
+import ButtonContainer from './Container/ButtonContainer';
 import './App.css';
 
 class App extends Component {
