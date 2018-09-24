@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
-
 import styled from 'styled-components';
-
 import TargerList from '../components/TargetList';
 
 const TargetContainer = styled.div`

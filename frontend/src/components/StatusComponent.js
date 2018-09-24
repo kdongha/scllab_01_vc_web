@@ -12,7 +12,7 @@ class StatusComponent extends Component {
     render() {
         return (
             <StatusContainer>
-                Ststus :
+                Status :
             </StatusContainer>
         );
     }
