@@ -1,7 +1,0 @@
-.TargetContainer{
-    /*background-color:red;*/
-    height: calc(90% - 4rem);
-    width: calc(40% - 4rem);
-    display: inline-block;
-    padding:2rem;
-}

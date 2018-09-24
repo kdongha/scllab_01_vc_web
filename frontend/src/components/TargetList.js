@@ -1,41 +1,37 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
-import '../css/TargetList.css';
+const TargetListContainer = styled.div`
+    width: calc(100% - 4px);
+    height: 90%;
+    border: 2px solid lightseagreen;
+    margin: auto;
+    `;
+
+const Target = styled.li`
+    text-align: left;
+    margin: 0.8rem 1rem;
+    background-color: ${props => props.select? "lightblue" : "white"};
+    cursor: pointer;
+    `;
 
 class TargetList extends Component {
-    static defaultProps={
-        targetList:['원빈','두준오빠'],
-    };
-
-    constructor(props) {
-        super(props);
-        this.state={
-            select:-1,
-        }
-    }
-
-    selectTartet=(index)=>{
-        this.setState({
-            select:index,
-        })
-    };
-
     render() {
-        const targetList=this.props.targetList.map(
-            (name,index) => (<li key={index} className={(this.state.select===index?"selectedTarget":null)} onClick={()=>{this.selectTartet(index)}}>{name}</li>)
+        const targetList = this.props.targetList.map(
+            (name, index) => (<Target select={this.props.selectedTarget===name} key={index} onClick={this.props.selectTarget}>{name}</Target>)
         );
 
         return (
-            <div className='targetList'>
+            <TargetListContainer>
                 {targetList}
-            </div>
+            </TargetListContainer>
         );
     }
 }
 
 TargetList.propTypes = {
-    targetList:PropTypes.array,
+    targetList: PropTypes.array,
 };
 
 export default TargetList;
