@@ -20,13 +20,13 @@ const NameTag=styled.div`
 
 class SelectFileComponent extends Component {
     render() {
-        const {nameTag} = this.props;
+        const {nameTag, file} = this.props;
         return (
             <SelectFileContainer>
                 <NameTag>
                     {nameTag}
                 </NameTag>
-                <InputFileComponent/>
+                <InputFileComponent file={file} selectedSource={this.props.selectedSource} selectSource={this.props.selectSource}/>
             </SelectFileContainer>
         );
     }

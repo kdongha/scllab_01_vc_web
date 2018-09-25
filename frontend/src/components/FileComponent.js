@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import SelectFileComponent from './SelectFileComponent'
+import InsertFileComponent from './InsertFileComponent';
+import SelectFileComponent from './SelectFileComponent';
 
 const FileContainer=styled.div`
     display: inline-block;
@@ -15,8 +16,8 @@ class FileComponent extends Component {
     render() {
         return (
             <FileContainer>
-                <SelectFileComponent nameTag={"Save Path"}/>
-                <SelectFileComponent nameTag={"Source"}/>
+                <InsertFileComponent nameTag={"SaveFile Name"} file={this.props.savePath} insertSaveFile={this.props.insertSaveFile}/>
+                <SelectFileComponent nameTag={"Source"} file={this.props.selectedSource} selectedSource={this.props.selectedSource} selectSource={this.props.selectSource}/>
             </FileContainer>
         );
     }
