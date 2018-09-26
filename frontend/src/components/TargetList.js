@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const TargetListContainer = styled.div`
@@ -29,9 +28,5 @@ class TargetList extends Component {
         );
     }
 }
-
-TargetList.propTypes = {
-    targetList: PropTypes.array,
-};
 
 export default TargetList;

@@ -33,17 +33,16 @@ const FuncButton = styled.div`
 
 class TargetComponent extends Component {
     render() {
-        const {targetList, selectedTarget, addTarget, removeTarget, selectTarget} = this.props;
         return (
             <TargetContainer>
                 <NameTag>
                     Target
                 </NameTag>
-                <TargerList targetList={targetList} selectedTarget={selectedTarget} selectTarget={selectTarget}/>
-                <FuncButton onClick={addTarget}>
-                    추가
-                </FuncButton>
-                <FuncButton onClick={removeTarget}>
+                <TargerList targetList={this.props.targetList} selectedTarget={this.props.selectedTarget} selectTarget={this.props.selectTarget}/>
+                {
+                    (this.props.state==='select')?<FuncButton onClick={this.props.addTarget}>추가</FuncButton>:<FuncButton onClick={this.props.cancelAddTarget}>취소</FuncButton>
+                }
+                <FuncButton onClick={this.props.removeTarget}>
                     삭제
                 </FuncButton>
             </TargetContainer>

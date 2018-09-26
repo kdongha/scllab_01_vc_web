@@ -21,22 +21,23 @@ const InputName=styled.input`
   padding:0.5rem 2rem;
   font-size:1.2rem;
   border-radius:0 1.5rem 1.5rem 1.5rem;
-  display:block;
   width: calc(100% - 4rem - 4px);
+  display: ${props=> props.display};
   &:focus{outline:none;};
 `;
 
-class InsertFileComponent extends Component {
+class InsertNameComponent extends Component {
     render() {
         return (
             <InsertFileContainer>
                 <NameTag>
-                    {this.props.nameTag}
+                    {this.props.state==='select'?'File Name':'Target Name'}
                 </NameTag>
-                <InputName onChange={this.props.insertSaveFile}/>
+                <InputName onChange={this.props.insertFileName} display={this.props.state==='select'?'block':'none'}/>
+                <InputName onChange={this.props.insertTargetName} display={this.props.state!=='select'?'block':'none'}/>
             </InsertFileContainer>
         );
     }
 }
 
-export default InsertFileComponent;
+export default InsertNameComponent;
