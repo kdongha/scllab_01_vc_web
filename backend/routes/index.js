@@ -16,7 +16,7 @@ router.get('/targetList', function (req, res, next) {
 
 router.get('/remove', function (req, res, next) {
     const removeTarget = req.query['target'];
-    fs.rmdir(targetPath + '/' + removeTarget, (err, stats) => {
+    fs.rmdir(targetPath + '/' + removeTarget, () => {
         res.json({'targetList': getDirs(targetPath)});
     });
 });
